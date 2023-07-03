@@ -1,0 +1,12 @@
+name: ClickableBlocks
+version: '${project.version}'
+main: cz.kuba1428.clickableblocks.ClickableBlocks
+prefix: ClickableBlocks
+authors: [Kuba1428]
+commands:
+  clickable-blocks:
+    aliases:
+      - cb
+    permission: clickableblocks.admin
+    usage: /ClickableBlocks <action>
+    description: "An ClickableBlocks administration command"

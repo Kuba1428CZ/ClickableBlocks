@@ -1,0 +1,4 @@
+lang: CZ
+placeholders:
+  #please note that this plugin has a full Placeholder API support. You are not limited to placeholders below
+  player: "{player}"

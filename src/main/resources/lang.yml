@@ -1,0 +1,15 @@
+message:
+  success:
+    create:
+      player: "&3Added player command to block"
+      console: "&3Added console command to block"
+      proxy: "&3Added proxy command to block"
+  error:
+    general:
+      not_player: "&cThis can be only executed by a player"
+    create:
+      undefined: "&cAn error occurred while performing action"
+      air: "&cYou are not looking at a block!"
+      wrong_arguments: "&cAn error occurred because invalid arguments were entered"
+      wrong_action_type: "&cAn error occured becaouse entered action is invalid"
+      wrong_arguments_format: "&cAn error occurred because of invalid argument format"
