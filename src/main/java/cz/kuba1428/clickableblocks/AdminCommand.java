@@ -35,6 +35,7 @@ public class AdminCommand implements CommandExecutor {
                                 DataManager.addAction(block.getLocation() ,args[1], action);
                                 commandSender.sendMessage(LangManager.getMessage("message.success.create." + args[1]));
                             } catch (IOException e) {
+                                commandSender.sendMessage(LangManager.getMessage("error.general.undefined"));
                                 throw new RuntimeException(e);
                             }
                         } else {
@@ -49,6 +50,22 @@ public class AdminCommand implements CommandExecutor {
 
                 break;
             case "delete":
+                if (commandSender instanceof Player){
+                    Block block = ((Player) commandSender).getTargetBlock(null, 5);
+                    if(!block.getType().equals(Material.AIR)){
+                        try {
+                            DataManager.deleteAllActions(block.getLocation());
+                            commandSender.sendMessage(LangManager.getMessage("message.success.delete"));
+                        } catch (IOException e) {
+                            commandSender.sendMessage(LangManager.getMessage("message.error.general.undefined"));
+                            throw new RuntimeException(e);
+                        }
+                    }else{
+                        commandSender.sendMessage(LangManager.getMessage("message.create.air"));
+                    }
+                }else{
+                    commandSender.sendMessage(LangManager.getMessage("message.error.general.not_player"));
+                }
 
                 break;
             case "info":

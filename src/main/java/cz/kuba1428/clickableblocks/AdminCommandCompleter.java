@@ -15,7 +15,7 @@ public class AdminCommandCompleter implements TabCompleter {
         List<String> completions = new ArrayList<>();
         if (args.length == 1){
             completions.add("add");
-//            completions.add("remove");
+            completions.add("delete");
 //            completions.add("reload");
 //            completions.add("info");
         }
@@ -26,7 +26,7 @@ public class AdminCommandCompleter implements TabCompleter {
                 completions.add("proxy");
             }
         }
-        if (args.length == 3){
+        if (args.length >= 3){
             if (args[0].equals("add")){
                 if (args[1].equals("proxy")){
                     completions.add("<server>");

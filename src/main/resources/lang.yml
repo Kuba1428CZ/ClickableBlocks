@@ -8,8 +8,8 @@ message:
   error:
     general:
       not_player: "&cThis can be only executed by a player"
-    create:
       undefined: "&cAn error occurred while performing action"
+    create:
       air: "&cYou are not looking at a block!"
       wrong_arguments: "&cAn error occurred because invalid arguments were entered"
       wrong_action_type: "&cAn error occured becaouse entered action is invalid"

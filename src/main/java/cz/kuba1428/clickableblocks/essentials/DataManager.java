@@ -6,7 +6,6 @@ import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class DataManager {
@@ -29,19 +28,16 @@ public class DataManager {
             }
         }
         public static void addAction(Location BlockLocation, String ActionType, String action) throws IOException {
-            try {
                 List<String> actionList = customConfig.getStringList(locationToName(BlockLocation) + ".actions." + ActionType);
                 actionList.add(action);
                 customConfig.set(locationToName(BlockLocation) + ".actions." + ActionType, actionList);
                 customConfig.save(customConfigFile);
-            }catch (IOException e){
-                throw new IOException(e);
-            }
-
         }
-        public static void removeActions(Location BlockLocation) throws IOException {
-            customConfig.set(locationToName(BlockLocation) + ".actions", null);
+        public static void deleteAllActions(Location BlockLocation) throws IOException {
+            customConfig.set(locationToName(BlockLocation), null);
             customConfig.save(customConfigFile);
+
+
         }
         public static List<String> getActions(Location BlockLocation, String ActionType){
             return customConfig.getStringList(locationToName(BlockLocation) + ".actions." + ActionType);
