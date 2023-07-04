@@ -1,5 +1,6 @@
 message:
   success:
+    delete: "&3All actions deleted from block"
     create:
       player: "&3Added player command to block"
       console: "&3Added console command to block"

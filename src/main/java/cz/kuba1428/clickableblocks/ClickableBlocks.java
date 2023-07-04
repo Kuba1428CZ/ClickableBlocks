@@ -16,6 +16,7 @@ public final class ClickableBlocks extends JavaPlugin {
         GlobalVars.logger.info("Plugin enabled");
         this.getCommand("clickable-blocks").setTabCompleter(new AdminCommandCompleter());
         this.getCommand("clickable-blocks").setExecutor(new AdminCommand());
+        getServer().getPluginManager().registerEvents(new OnClick(), this);
     }
 
     @Override

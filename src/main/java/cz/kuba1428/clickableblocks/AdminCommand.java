@@ -2,7 +2,7 @@ package cz.kuba1428.clickableblocks;
 
 import cz.kuba1428.clickableblocks.essentials.DataManager;
 import cz.kuba1428.clickableblocks.essentials.LangManager;
-import net.md_5.bungee.api.chat.TextComponent;
+
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.command.Command;
@@ -11,12 +11,11 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import java.io.IOException;
-import java.sql.Array;
+
 
 public class AdminCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] args) {
-        String[] action_types = {"proxy", "console", "player"};
         switch (args[0]) {
             case "add":
                 if (commandSender instanceof Player) {
@@ -27,7 +26,9 @@ public class AdminCommand implements CommandExecutor {
                         for (String arg :  args) {
                             if(num < 2){
                                 num++;
-                            }else action += arg + " ";
+                            }else {
+                                action += arg + " ";
+                            }
                         }
                         if (!block.getType().equals(Material.AIR)) {
                             try {
@@ -47,7 +48,7 @@ public class AdminCommand implements CommandExecutor {
                 }
 
                 break;
-            case "remove":
+            case "delete":
 
                 break;
             case "info":
